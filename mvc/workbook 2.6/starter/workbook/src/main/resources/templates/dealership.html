@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Dealership</title>
+    </head>
+    <body>
+        <h3>Dealership</h3>
+        <span th:if="${budget < 5000}">"Sorry, we don't have any cars below $5,000"</span>
+        <span th:if="${budget > 5000}">
+            <span th:switch="${make}">
+                <span th:case="'Toyota'">"Toyota Corolla: $5,000"</span>
+                <span th:case="'Volkswagen'">"Volkswagen Jetta: $6,000"</span>
+                <span th:case="'Ford'">"Ford Escape: $7,000"</span>
+                <span th:case="'Honda'">"Honda Civic: $8,000"</span>
+                <span th:case="*">"No cars match your query."</span>
+            </span>
+        </span>
+    </body>
+</html>
